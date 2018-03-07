@@ -9,7 +9,7 @@ class Inscricao(models.Model):
     nome          = models.CharField     ( 'Nome',            max_length=100,  null =False, blank=False)
     documento     = models.CharField     ( 'Documento',       unique    =True, null =False, blank=False, max_length=20 )
     orgao         = models.CharField     ( 'Órgão expedidor', max_length=50,   null =False, blank=False)
-    ano_conclusao = models.CharField     ( 'Ano de conclusão do ensino médio', max_length=4, null=False, blank=False)
+    ano_conclusao = models.CharField     ( 'Ano de conclusão do ensino médio', max_length=4, null=False, blank=False, default=0000)
     telefone      = models.CharField     ( 'Telefone',  max_length=11, null=True,  blank=False)
     email         = models.EmailField    ( 'Email',     max_length=50, null=False, blank=False)
     observacao    = models.TextField     ( 'Descrição', blank=True)

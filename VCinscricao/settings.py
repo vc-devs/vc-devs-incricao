@@ -130,7 +130,7 @@ STATIC_URL = '/static/'
 
 # database heroku
 db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['heroku'] =  dj_database_url.config()
+DATABASES['default'] =  dj_database_url.config()
 #
 SECURE_PROXXY_SSL_HEADER = ('HTTP_X_FORWARDED_PRORO','https')
 #

@@ -8,11 +8,13 @@ class InscricaoAdmin(admin.ModelAdmin):
 
     def save_model(self, request, obj, form, change):
         data = {
-            'nome'      : request.POST.__getitem__('nome'),
-            'documento' : request.POST.__getitem__('documento'),
-            'orgao'     : request.POST.__getitem__('orgao'),
-            'telefone'  : request.POST.__getitem__('telefone'),
-            'email'     : request.POST.__getitem__('email')
+            'nome'         : request.POST.__getitem__('nome'),
+            'documento'    : request.POST.__getitem__('documento'),
+            'orgao'        : request.POST.__getitem__('orgao'),
+            'telefone'     : request.POST.__getitem__('telefone'),
+            'email'        : request.POST.__getitem__('email'),
+            'ano_conclusao': request.POST.__getitem__('ano_conclusao')
+
         }
         requests.post('https://vc-2018-api.herokuapp.com/api/email/inscricao',data)
         obj.save()

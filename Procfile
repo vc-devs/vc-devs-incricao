@@ -1,0 +1,1 @@
+web: gunicorn VCinscricao.wsgi --log-file -

@@ -81,7 +81,12 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    },
+     'heroku': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'postgresql',
     }
+    
 }
 
 
@@ -125,7 +130,7 @@ STATIC_URL = '/static/'
 
 # database heroku
 db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES.update(default=db_from_env)
+DATABASES['heroku'] =  dj_database_url.config()
 #
 SECURE_PROXXY_SSL_HEADER = ('HTTP_X_FORWARDED_PRORO','https')
 #
